@@ -1,0 +1,308 @@
+// W:\WorkPgm\Palm\gc2_Yahdice\Yahdice.rcp
+//
+// Generated: 15.02.2002 00:41:15
+//
+#include "Yahdice.h"
+
+FORM ID frmMain AT (0 0 160 160)
+   NOFRAME
+   NOSAVEBEHIND
+   USABLE
+   MENUID mnuMain
+
+   BEGIN
+
+      TITLE "Yahdice"
+
+      LABEL "Score:" ID lblScore AT (81 106) USABLE FONT 2
+      LABEL ">" ID lblPrompt AT (4 148) USABLE FONT 0
+      LABEL "Subtotal:" ID lblTotal AT (4 96) USABLE FONT 0
+      LABEL "Bonus:" ID lblBonus AT (4 107) USABLE FONT 0
+      LABEL "Player:" ID Label005 AT (50 1) USABLE FONT 0
+
+      FIELD ID fldScore1s AT (44 20 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScore2s AT (44 32 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScore3s AT (44 44 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScore4s AT (44 56 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScore5s AT (44 68 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScore6s AT (44 80 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreThree AT (124 20 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreFour AT (124 32 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreFullHouse AT (124 44 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreSmStrait AT (124 56 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreLgStrait AT (124 68 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreYahdice AT (124 80 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoreChance AT (124 92 18 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldPrompt AT (12 148 102 11) USABLE LEFTALIGN FONT 0 NONEDITABLE SINGLELINE MAXCHARS 50 AUTOSHIFT 
+      FIELD ID fldValTotal AT (44 96 35 11) USABLE LEFTALIGN FONT 0 NONEDITABLE SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldValBonus AT (44 107 17 11) USABLE LEFTALIGN FONT 0 NONEDITABLE SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldValScore AT (124 106 29 11) USABLE LEFTALIGN FONT 2 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldPlayer AT (82 1 64 11) USABLE LEFTALIGN FONT 1 NONEDITABLE SINGLELINE MAXCHARS 255 AUTOSHIFT 
+
+      FORMBITMAP AT (0 120) BITMAP gbmpHorizBar160x2 USABLE 
+
+      BUTTON "Roll" ID btnRoll AT (5 128 30 15) USABLE LEFTANCHOR BOLDFRAME FONT 1
+      BUTTON "T" ID btnToggleAllDice AT (146 133 10 11) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "S" ID btnScores AT (148 1 10 11) USABLE LEFTANCHOR FRAME FONT 1
+
+      PUSHBUTTON "1" ID btnRoll1 AT (121 148 11 11) USABLE DISABLED LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "2" ID btnRoll2 AT (133 148 11 11) USABLE DISABLED LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "3" ID btnRoll3 AT (145 148 11 11) USABLE DISABLED LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "1's" ID btn1s AT (5 21 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "2's" ID btn2s AT (5 33 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "3's" ID btn3s AT (5 45 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "4's" ID btn4s AT (5 57 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "5's" ID btn5s AT (5 69 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "6's" ID btn6s AT (5 81 36 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "Three K." ID btnThree AT (81 21 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "Four K." ID btnFour AT (81 33 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "F.House" ID btnFullHouse AT (81 45 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "SmStrait" ID btnSmStrait AT (81 57 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "LgStrait" ID btnLgStrait AT (81 69 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "Yahdice" ID btnYahdice AT (81 81 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+      PUSHBUTTON "Chance" ID btnChance AT (81 93 40 9) USABLE LEFTANCHOR FONT 0 GROUP 0
+
+      GADGET ID gadDie1 AT (40 126 19 19) USABLE 
+      GADGET ID gadDie2 AT (61 126 19 19) USABLE 
+      GADGET ID gadDie3 AT (82 126 19 19) USABLE 
+      GADGET ID gadDie4 AT (103 126 19 19) USABLE 
+      GADGET ID gadDie5 AT (124 126 19 19) USABLE 
+
+   END
+
+FORM ID frmAbout AT (10 26 140 117)
+   NOFRAME
+   NOSAVEBEHIND
+   MODAL
+   USABLE
+   DEFAULTBTNID btnAboutOk
+
+   BEGIN
+
+      TITLE "Mirek's Yahdice"
+
+      LABEL "Yahdice v.2.01" ID Label001 AT (31 34) USABLE FONT 2
+      LABEL "(C) Mirek Wojtowicz '2001,2002" ID Label002 AT (6 50) USABLE FONT 0
+      LABEL "e-mail: info@mirekw.com" ID Label003 AT (6 66) USABLE FONT 0
+      LABEL "WWW: http://www.mirekw.com" ID Label004 AT (6 78) USABLE FONT 0
+
+      FORMBITMAP AT (7 26) BITMAP gbmp1_die5 USABLE 
+
+      BUTTON "Ok" ID btnAboutOk AT (43 95 55 15) USABLE LEFTANCHOR FRAME FONT 0
+
+   END
+
+FORM ID frmMenu AT (0 0 160 160)
+   NOFRAME
+   NOSAVEBEHIND
+   MODAL
+   USABLE
+   HELPID gtxt_Copyright
+
+   BEGIN
+
+      TITLE "Mirek's Yahdice"
+
+      LABEL "Select players:" ID lblMenuPrompt AT (9 53) USABLE FONT 1
+      LABEL "Yahdice v.2.01" ID lblMenuTitle AT (29 29) USABLE FONT 2
+      LABEL "freeware" ID Label006 AT (112 16) USABLE FONT 0
+
+      FIELD ID fldMenuPlayer1 AT (61 68 53 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 19 AUTOSHIFT 
+      FIELD ID fldMenuPlayer2 AT (61 84 53 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 19 AUTOSHIFT 
+      FIELD ID fldMenuPlayer3 AT (61 100 53 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 19 AUTOSHIFT 
+      FIELD ID fldMenuPlayer4 AT (61 116 53 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 19 AUTOSHIFT 
+
+      FORMBITMAP AT (5 21) BITMAP gbmp1_die5 USABLE 
+      FORMBITMAP AT (0 44) BITMAP gbmpHorizBar160x2 USABLE 
+
+      BUTTON "Start game" ID btnMenuPlay AT (13 137 58 15) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "Hall of Fame" ID btnMenuHall AT (85 137 59 15) USABLE LEFTANCHOR FRAME FONT 0
+
+      CHECKBOX "" ID chkMenuPlayer1 AT (41 68 17 11) USABLE LEFTANCHOR FONT 0 CHECKED
+      CHECKBOX "" ID chkMenuPlayer2 AT (41 84 17 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "" ID chkMenuPlayer3 AT (41 100 17 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "" ID chkMenuPlayer4 AT (41 116 17 11) USABLE LEFTANCHOR FONT 0
+
+      GRAFFITISTATEINDICATOR AT (141 117)
+
+   END
+
+FORM ID frmHall AT (0 0 160 160)
+   NOFRAME
+   NOSAVEBEHIND
+   MODAL
+   USABLE
+   HELPID gtxt_Hall
+
+   BEGIN
+
+      TITLE "Yahdice - Hall of Fame"
+
+      LABEL "1." ID Label007 AT (4 36) USABLE FONT 1
+      LABEL "2." ID Label008 AT (4 48) USABLE FONT 1
+      LABEL "3." ID Label009 AT (4 60) USABLE FONT 1
+      LABEL "4." ID Label010 AT (4 76) USABLE FONT 0
+      LABEL "5." ID Label011 AT (4 88) USABLE FONT 0
+      LABEL "6." ID Label012 AT (4 100) USABLE FONT 0
+      LABEL "7." ID Label013 AT (4 112) USABLE FONT 0
+      LABEL "8." ID Label014 AT (4 124) USABLE FONT 0
+
+      FIELD ID fldHallPlayer1 AT (16 36 53 11) USABLE LEFTALIGN FONT 1 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer2 AT (16 48 53 11) USABLE LEFTALIGN FONT 1 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer3 AT (16 60 53 11) USABLE LEFTALIGN FONT 1 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer4 AT (16 76 53 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer5 AT (16 88 53 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer6 AT (16 100 53 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer7 AT (16 112 53 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallPlayer8 AT (16 124 53 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore1 AT (76 36 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore2 AT (76 48 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore3 AT (76 60 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore4 AT (76 76 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore5 AT (76 88 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore6 AT (76 100 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore7 AT (76 112 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallScore8 AT (76 124 21 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate1 AT (104 36 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate2 AT (104 48 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate3 AT (104 60 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate4 AT (104 76 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate5 AT (104 88 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate6 AT (104 100 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate7 AT (104 112 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldHallDate8 AT (104 124 54 11) USABLE LEFTALIGN FONT 0 NONEDITABLE UNDERLINED SINGLELINE MAXCHARS 255 AUTOSHIFT 
+      FIELD ID fldScoresToLeave AT (142 18 14 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 1 NUMERIC
+
+      BUTTON "Close" ID btnHallClose AT (113 141 42 15) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "Clear all" ID btnHallClearAll AT (5 18 42 11) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "Clear all but first n:" ID btnHallClearMost AT (52 18 87 11) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "Submit high scores" ID btnHallSubmit AT (5 141 89 15) USABLE LEFTANCHOR FRAME FONT 0
+
+   END
+
+FORM ID frmPrefs AT (6 6 149 149)
+   NOFRAME
+   NOSAVEBEHIND
+   MODAL
+   USABLE
+   HELPID gtxt_Prefs
+
+   BEGIN
+
+      TITLE "Yahdice preferences"
+
+      LABEL "pause:" ID Label015 AT (24 40) USABLE FONT 0
+      LABEL "s." ID Label016 AT (66 40) USABLE FONT 0
+
+      FIELD ID fldPrefsPause AT (51 39 13 11) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 1 AUTOSHIFT NUMERIC
+
+      BUTTON "Accept" ID btnPrefsAccept AT (15 127 50 15) USABLE LEFTANCHOR FRAME FONT 0
+      BUTTON "Cancel" ID btnPrefsCancel AT (83 127 50 15) USABLE LEFTANCHOR FRAME FONT 0
+
+      CHECKBOX "Dice rolling animation" ID chkPrefsAnimation AT (6 18 129 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Pause betw. players change" ID chkPrefsPause AT (6 29 137 13) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Also for used categories" ID chkPrefsAllHints AT (21 62 121 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Show score hints" ID chkPrefsShowHints AT (6 52 125 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Show category hints" ID chkPrefsCategHints AT (6 75 137 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Advanced user" ID chkPrefsAdvUser AT (6 87 133 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Mark dice to be kept" ID chkPrefsMarkKeep AT (6 99 141 11) USABLE LEFTANCHOR FONT 0
+      CHECKBOX "Auto-sort dice" ID chkPrefsAutoSort AT (6 111 141 11) USABLE LEFTANCHOR FONT 0
+
+   END
+
+STRING ID gtxt_Copyright "Yahdice v.2.01\nA free clone of Yahtzee\231.\n\nCopyright Mirek Wojtowicz\ne-mail: info@mirekw.com\nhttp://www.mirekw.com/\n\nYahdice is a freeware released under GNU General Public License (GPL). It is programmed in GNU C. Full source code and Beta versions are available from http://groups.yahoo.com/group/Yahdice/\n\nYahtzee is a registered trademark of Milton Bradley, which is owned by Hasbro, Inc.\n"
+STRING ID gtxt_Rules "Yahdice rules\n\nYahdice can be played in solitary or by a group. The group version simply consists of a number of players playing the solitary version simultaneously, with the highest score winning.\n\nThe game consists of 13 rounds. In each round, you roll the dice and then score the roll in one of 13 categories. You must score once in each category -- which means that towards the end of the game you may have to settle for scoring zero in some categories. You do this by tapping on one of categories names in either the Left Section or Right Section. Once a category has been scored, it is closed out for the rest of the game; you cannot change a category's score once it's been set.\n\nEach category defines its own scoring rules, as described in Help/Scoring.\n"
+STRING ID gtxt_Scoring "Scoring in Yahdice\n\nLeft Section\n\n1's, 2's, 3's, 4's, 5's, 6's\nYou score only the specified die face.\n\nIf you score 63 or more points in the Left Section (an average of 3 die faces per category), you will get a bonus of 35 points.\n\n\nRight Section\n\n3 of a Kind\nYou must have at least 3 of the same die faces.\nYou score all the die faces.\n\n4 of a Kind\nYou must have at least 4 of the same die faces.\nYou score all the die faces.\n\nFull House\nA Full House is a roll where you have both a 3 of a kind, and a pair.\nFull houses score 25 points.\n\nSmall Straight\nA sequence of 4 consecutive die faces.\nScore 30 points\n\nLarge Straight\nA sequence of 5 consecutive die faces.\nScore 40 points\n\nYahdice\nA Yahdice is a 5 of a Kind.\nYahdice scores either 50 or 100 points, see Help/Yahdice option for details.\n\nChance\nChance is the catch-all roll. Simply total all the die faces values.\n"
+STRING ID gtxt_Playing "How to play\n\nTap on the 'Roll' button to throw all dice. Now you can either score the current  roll, or re-roll any or all of the five dice. Tap on the dice you want to mark for re-rolling, tap again to unselect them. Use the 'T' button to toggle your selection. Tap on the 'Roll' to roll selected dice only.\n\nWhen you've finished your turn (max. 3 rolls), click on the appropriate item name to select the scoring category of your choice. Note that the option \042Game/Undo\042 allows to undo your selection providing you didn't roll the dice again.\n\nTap on the 'S' button in the upper right corner to view current scores of all players.\n\nThe game ends once all 13 categories have been scored. \n"
+STRING ID gtxt_YahScoring "Yahdice scoring\n\nYahdice scores 50 points.  If you roll more than one Yahdice in a single game, you will earn a 100 point bonus for each additional Yahdice roll. If you have scored a zero in the Yahdice category, you cannot receive any bonuses during the current game.\n\nYou can also use subsequent Yahdice's as jokers in the Right Section, provided the following criteria have been satisfied:\n\n- You have scored a zero or 50 in the Yahdice category.\n\n- You have filled the corresponding category in the Left Section.\n"
+STRING ID gtxt_Hall "This dialog shows 8 best scores in the game.\n\nUse the \042Clear all\042 button to remove all user scores. They will be replaced by default \042Yahdice\042 scores.\n\nUse the \042Clear all but first n:\042 button to remove some user scores. The specified number of highest scores will be preserved. Note that erased scores will be replaced with default \042Yahdice\042 scores.\n"
+STRING ID gtxt_Prefs "\042Dice rolling animation\042\nCheck the box to visualize the dice rolling. In order to play faster uncheck the box.\n\n\042Pause between players change\042\nCheck the box if you are playing in a group and want to have a little time after scoring in each to view your results.\n\n\042Show score hints\042\nCheck the box if you want the program to calculate actual value of your hand. Score hints are shown in small chars to the right of each unused category.\n\n\042Also for used categories\042\nCheck this box to show score hints also for already used categories.\n\n\042Show category hints\042\nWhen checked, especially important categories (like Full House, Straight, etc) will flash when a corresponding dice combination has been rolled.\n\n\042Advanced user\042\nCheck this box when you don't want to see the \04263 points bonus\042 dialog message anymore.\n\n\042Mark dice to be kept\042\nWhen checked, for dice re-rolling the dice to be kept should be marked."
+STRING ID gtxt_ScoresSubmition "This version of Yahdice allows submitting high scores to the Internet-based high scores list. The list is available at \nhttp://www.mirekw.com/palm/yahscores.html\n\nTo submit your scores copy the generated text to Memo Pad. After synchronizing your device with Palm Desktop simply copy and paste your scores into an e-mail and send it to scores@mirekw.com\n"
+
+ALERT ID msgBox3Str
+   DEFAULTBUTTON 0
+   INFORMATION
+   BEGIN
+      TITLE "Yahdice"
+      MESSAGE "^1\n^2\n^3"
+      BUTTONS "OK" 
+   END
+
+ALERT ID msgBox1Str
+   DEFAULTBUTTON 0
+   INFORMATION
+   BEGIN
+      TITLE "Yahdice"
+      MESSAGE "^1"
+      BUTTONS "OK" 
+   END
+
+ALERT ID msgBoxYesNo
+   DEFAULTBUTTON 0
+   CONFIRMATION
+   BEGIN
+      TITLE "Yahdice"
+      MESSAGE "^1"
+      BUTTONS "Yes" "No" "Cancel" 
+   END
+
+ALERT ID msgBoxHighScores
+   HELPID gtxt_ScoresSubmition
+   DEFAULTBUTTON 0
+   INFORMATION
+   BEGIN
+      TITLE "Your top 5 high scores"
+      MESSAGE "^1\n^2\n^3"
+      BUTTONS "Copy to Memo Pad" "Close" 
+   END
+
+BITMAP ID gbmp1_die0 "bmp/dice0.bmp" COMPRESS
+BITMAP ID gbmp1_die1 "bmp/dice1.bmp" COMPRESS
+BITMAP ID gbmp1_die2 "bmp/dice2.bmp" COMPRESS
+BITMAP ID gbmp1_die3 "bmp/dice3.bmp" COMPRESS
+BITMAP ID gbmp1_die4 "bmp/dice4.bmp" COMPRESS
+BITMAP ID gbmp1_die5 "bmp/dice5.bmp" COMPRESS
+BITMAP ID gbmp1_die6 "bmp/dice6.bmp" COMPRESS
+BITMAP ID gbmp1_die1_0 "bmp/dice1_0.bmp" COMPRESS
+BITMAP ID gbmp1_die2_0 "bmp/dice2_0.bmp" COMPRESS
+BITMAP ID gbmp1_die3_0 "bmp/dice3_0.bmp" COMPRESS
+BITMAP ID gbmp1_die4_0 "bmp/dice4_0.bmp" COMPRESS
+BITMAP ID gbmp1_die5_0 "bmp/dice5_0.bmp" COMPRESS
+BITMAP ID gbmp1_die6_0 "bmp/dice6_0.bmp" COMPRESS
+BITMAP ID gbmp_dieanim01 "bmp/dice_anim01.bmp" COMPRESS
+BITMAP ID gbmp_dieanim02 "bmp/dice_anim02.bmp" COMPRESS
+BITMAP ID gbmp_dieanim03 "bmp/dice_anim03.bmp" COMPRESS
+BITMAP ID gbmp_dieanim04 "bmp/dice_anim04.bmp" COMPRESS
+
+BITMAPFAMILY ID gbmpHorizBar160x2 "bmp/HorizBar1_160x2.bmp" "" "" "bmp/HorizBar8_160x2.bmp" NOCOLORTABLE COMPRESS 
+
+MENU ID mnuMain
+   BEGIN
+   PULLDOWN "Game"
+      BEGIN
+      MENUITEM "New game" ID optNewGame "N"
+      MENUITEM SEPARATOR
+      MENUITEM "Undo" ID optUndo "U"
+      MENUITEM SEPARATOR
+      MENUITEM "Hall of Fame..." ID optHall "F"
+      MENUITEM "Preferences..." ID optPrefs "P"
+      END
+   PULLDOWN "Help"
+      BEGIN
+      MENUITEM "Rules..." ID optRules "R"
+      MENUITEM "Scoring..." ID optScoring "S"
+      MENUITEM "Yahdice..." ID optYahScoring "Y"
+      MENUITEM "How to play..." ID optPlaying "H"
+      MENUITEM SEPARATOR
+      MENUITEM "About..." ID optAbout "A"
+      END
+   END
+
+VERSION ID VersionID "2.01.0"
+APPLICATIONICONNAME ID ApplNameID "Yahdice"
+APPLICATION ID ApplID "m_YA"
+ICON "ico/icoYahdice_1b.bmp"
+SMALLICON "ico/icoYahdice_1b_small.bmp"
+ICONFAMILY "ico/icoYahdice_1b.bmp" "" "ico/icoYahdice_4b.bmp" "ico/icoYahdice_8b.bmp" NOCOLORTABLE 
+SMALLICONFAMILY "ico/icoYahdice_1b_small.bmp" "" "ico/icoYahdice_4b_small.bmp" "ico/icoYahdice_8b_small.bmp" NOCOLORTABLE 
+
